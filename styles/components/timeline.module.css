@@ -1,0 +1,105 @@
+/* src/styles/timeline.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  background-color: #121215;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f4f4f5;
+}
+
+.timeInfo {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--primary);
+  background-color: rgba(99, 102, 241, 0.1);
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.timelineTrackContainer {
+  position: relative;
+  height: 48px;
+  background-color: #18181b;
+  border-radius: 0.5rem;
+  border: 1px solid #27272a;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Regla con segmentos de segundo */
+.ruler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.rulerTick {
+  width: 1px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+/* Zona seleccionada del clip */
+.selectionRange {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(99, 102, 241, 0.25);
+  border-left: 3px solid var(--primary);
+  border-right: 3px solid var(--primary);
+  pointer-events: none;
+}
+
+/* Controles deslizantes sobrepuestos */
+.controlsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sliderLabel {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  width: 80px;
+  font-weight: 500;
+}
+
+.rangeInput {
+  flex: 1;
+  accent-color: var(--primary);
+  height: 6px;
+  background-color: #27272a;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}

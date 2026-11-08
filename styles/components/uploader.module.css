@@ -1,0 +1,30 @@
+.uploaderContainer {
+  width: 100%;
+}
+
+.uploadButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 0.5rem;
+  color: var(--text-primary, #ffffff);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.uploadButton:hover {
+  background-color: rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.uploadButton svg {
+  color: var(--accent-color, #6366f1);
+  flex: none;
+}

@@ -1,0 +1,86 @@
+.projectsSectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color, #334155);
+}
+
+.quotaInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted, #94a3b8);
+}
+
+.quotaLink {
+  color: var(--accent-color, #818cf8);
+  font-weight: 600;
+}
+
+.quotaLink:hover {
+  text-decoration: underline;
+}
+
+.myVideosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.myVideosTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary, #ffffff);
+}
+
+.videoCardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.videoCardItem {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.videoCardThumbnail {
+  height: 60px;
+  width: 100%;
+  border-radius: 0.375rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.videoCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-muted, #94a3b8);
+}
+
+.badgeWarning {
+  color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.12);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.badgeInfo {
+  color: #818cf8;
+  background-color: rgba(129, 140, 248, 0.12);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
