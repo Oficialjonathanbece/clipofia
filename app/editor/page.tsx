@@ -1,37 +1,31 @@
 'use client';
 
 import styles from '@/styles/fase3/editor.module.css';
-import { Sidebar } from '@/app/components/shared/Sidebar';
-import { VideoUploader } from '@/app/components/uploader/VideoUploader';
 import { Timeline } from '@/app/components/editor/Timeline';
 import { SubtitleEditor } from '@/app/components/editor/SubtitleEditor';
-import { ClipCard } from '@/app/components/editor/ClipCard';
-import { useEditorStore } from '@/store/useEditorStore'; // 1. Importas tu store
+import { useEditorStore } from '@/store/useEditorStore';
 import { Film } from 'lucide-react';
+import { ProgressBar } from '@/app/components/ui/ProgressBar';
 
 export default function EditorPage() {
 
   const videoFile = useEditorStore((state) => state.videoFile);
   const videoUrl = videoFile ? URL.createObjectURL(videoFile) : null;
+  const isProcessing = useEditorStore((state) => state.isProcessing);
+  const uploadProgress = useEditorStore((state) => state.uploadProgress);
 
   return (
     <div className={styles.editorContainer}>
-      {/* Navbar superior del editor */}
-    
-      {/* Contenedor de 3 columnas */}
-      <div className={styles.editorGrid}>
-        
-        {/* COLUMNA 1: Sidebar de navegación y carga de archivos */}
-        <aside className={styles.sidebarColumn}>
-          <div className={styles.panel}>
-            <h3>Clips Generados</h3>
-            <ClipCard/> 
-          </div>
-        </aside>
 
+      <div className={styles.editorGrid}>
         {/* COLUMNA 2: Visualizador central y Timeline */}
         <main className={styles.previewColumn}>
-          {videoUrl ? (
+          {isProcessing ? (
+            /* Si se está procesando o subiendo el archivo, mostramos tu ProgressBar */
+            <div style={{ width: '100%', maxWidth: '320px', padding: '1rem' }}>
+              <ProgressBar progress={uploadProgress} label="Procesando archivo de vídeo..." />
+            </div>
+          ) : videoUrl ? (
             /* Si ya se subió un vídeo, mostramos el reproductor */
             <video 
               src={videoUrl} 

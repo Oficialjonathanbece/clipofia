@@ -16,6 +16,8 @@ interface EditorState {
   endTime: number;
   currentTime: number;
   subtitles: Subtitle[];
+  isProcessing: boolean;
+  uploadProgress: number;
   
   // Acciones
   setVideoFile: (file: File) => void;
@@ -24,6 +26,7 @@ interface EditorState {
   setCurrentTime: (time: number) => void;
   setSubtitles: (subtitles: Subtitle[]) => void;
   updateSubtitleText: (id: string, text: string) => void;
+  setProcessing: (isProcessing: boolean, progress?: number) => void;
   reset: () => void;
 }
 
@@ -35,6 +38,10 @@ export const useEditorStore = create<EditorState>((set) => ({
   endTime: 0,
   currentTime: 0,
   subtitles: [],
+
+
+  isProcessing: false,
+  uploadProgress: 0,
 
   setVideoFile: (file) => {
     const url = URL.createObjectURL(file);
@@ -50,5 +57,20 @@ export const useEditorStore = create<EditorState>((set) => ({
         sub.id === id ? { ...sub, text } : sub
       ),
     })),
-  reset: () => set({ videoFile: null, videoUrl: null, duration: 0, startTime: 0, endTime: 0, subtitles: [] }),
-}));
+  // Implementación de la nueva acción
+  setProcessing: (isProcessing, progress = 0) => 
+    set({ isProcessing, uploadProgress: progress }),
+
+  reset: () => set({ 
+    videoFile: null, 
+    videoUrl: null, 
+    duration: 0, 
+    startTime: 0, 
+    endTime: 0, 
+    subtitles: [],
+    isProcessing: false,
+    uploadProgress: 0
+  }),
+}));  
+
+  

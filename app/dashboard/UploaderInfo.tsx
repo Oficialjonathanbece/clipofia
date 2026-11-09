@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '@/styles/projectsInfo.module.css';
+import styles from '@/styles/dashboard/projectsInfo.module.css';
 
 export function ProjectsUploaderInfo() {
   return (

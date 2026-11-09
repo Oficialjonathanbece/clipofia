@@ -5,10 +5,8 @@ import React, { useState } from 'react';
 import { ClipCard } from '@/app/components/editor/ClipCard';
 import { Card } from '@/app/components/ui/Card';
 import { Film, Plus } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/app/components/ui/Button';
 import { ProjectsUploaderInfo } from '@/app/dashboard/UploaderInfo';
-import styles from '@/styles/dashboard.module.css';
+import styles from '@/styles/dashboard/dashboard.module.css';
 
 
 export default function DashboardPage() {
@@ -47,11 +45,6 @@ export default function DashboardPage() {
           <h1 className={styles.title}>Mis Clips Exportados</h1>
           <p className={styles.subtitle}>Gestiona, descarga o elimina tus videos procesados en 9:16.</p>
         </div>
-        <Link href="/editor">
-          <Button variant="primary" size="md">
-            <Plus size={16} /> Nuevo Editor
-          </Button>
-        </Link>
       </div>
 
       {/* Listado de clips o estado vacío */}
